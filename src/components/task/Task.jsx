@@ -5,6 +5,7 @@ const Task = ({ id, task, allTasks, setAllTasks }) => {
 				id={task.id}
 				type='checkbox'
 				onChange={() => checkTask(task.id, allTasks, setAllTasks)}
+				checked={task.checked}
 			/>
 			<label htmlFor={task.id}>{task.task}</label>
 			<span onClick={() => removeTask(task.id, allTasks, setAllTasks)}>X</span>

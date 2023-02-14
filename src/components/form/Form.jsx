@@ -1,15 +1,20 @@
 import { useState } from 'react';
 
-const Form = ({ allTasks, setAllTasks }) => {
+const Form = ({ allTasks, setAllTasks, setFilter }) => {
 	const [task, setTask] = useState('');
+
 	return (
-		<form onSubmit={e => handleSubmit(e, task, setTask, allTasks, setAllTasks)}>
-			<input
-				type='text'
-				onChange={e => handleChange(e.target.value, setTask)}
-				value={task}
-			/>
-		</form>
+		<>
+			<form
+				onSubmit={e => handleSubmit(e, task, setTask, allTasks, setAllTasks)}
+			>
+				<input
+					type='text'
+					onChange={e => handleChange(e.target.value, setTask)}
+					value={task}
+				/>
+			</form>
+		</>
 	);
 };
 
